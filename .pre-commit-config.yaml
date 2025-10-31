@@ -8,3 +8,12 @@ repos:
         args: [--fix]  # automatically fix issues where possible
       - id: ruff-format
         name: Run Ruff Formatter
+  # --- Run pytest before commit ---
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Run pytest
+        entry: bash -c "PYTHONPATH=src python -m pytest -q"
+        language: system
+        types: [python]
+        pass_filenames: false
