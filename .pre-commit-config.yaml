@@ -1,19 +1,10 @@
 repos:
-# --- Black autoformatter ---
-  - repo: https://github.com/psf/black
-    rev: 24.10.0   # Use the latest stable version
+  # --- Ruff for linting + fixing ---
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.3   # ( latest known stable tag)
     hooks:
-      - id: black
-        name: Format Python code with Black
-        language_version: python3
-
-  # --- Pylint linter ---
-  - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v3.0.0a5   # use latest pylint mirror version
-    hooks:
-      - id: pylint
-        name: Run Pylint
-        entry: pylint
-        language: system
-        types: [python]
-        args: ["--disable=C0114,C0115,C0116"]  # optional: disable docstring warnings
+      - id: ruff
+        name: Run Ruff (lint + autofix)
+        args: [--fix]  # automatically fix issues where possible
+      - id: ruff-format
+        name: Run Ruff Formatter

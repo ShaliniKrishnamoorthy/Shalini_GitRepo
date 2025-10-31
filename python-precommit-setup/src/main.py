@@ -1,5 +1,5 @@
 """
-Return a greeting message. 
+Return a greeting message.
 """
 
 
