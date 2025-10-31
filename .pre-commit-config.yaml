@@ -1,4 +1,13 @@
 repos:
+# --- Black autoformatter ---
+  - repo: https://github.com/psf/black
+    rev: 24.10.0   # Use the latest stable version
+    hooks:
+      - id: black
+        name: Format Python code with Black
+        language_version: python3
+
+  # --- Pylint linter ---
   - repo: https://github.com/pre-commit/mirrors-pylint
     rev: v3.0.0a5   # use latest pylint mirror version
     hooks:
