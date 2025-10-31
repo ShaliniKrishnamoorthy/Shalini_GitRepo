@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v3.0.0a5   # use latest pylint mirror version
+    hooks:
+      - id: pylint
+        name: Run Pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args: ["--disable=C0114,C0115,C0116"]  # optional: disable docstring warnings
